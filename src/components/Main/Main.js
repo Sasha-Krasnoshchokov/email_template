@@ -1,4 +1,4 @@
-import { Feedback } from './Feedback/Feedback';
+// import { Feedback } from './Feedback/Feedback';
 import './Main.scss';
 import { Menu } from './Menu/Menu';
 import { Templates } from './Templates/Templates';
@@ -10,7 +10,7 @@ export function Main() {
 
         <Menu />
         <Templates />
-        <Feedback />
+        {/* <Feedback /> */}
 
       </main>
     </>

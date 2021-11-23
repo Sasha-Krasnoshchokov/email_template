@@ -1,7 +1,8 @@
-// import { Feedback } from './Feedback/Feedback';
 import './Main.scss';
+
 import { Menu } from './Menu/Menu';
-import { Templates } from './Templates/Templates';
+// import { Templates } from './Templates/Templates';
+// import { Feedback } from './Feedback/Feedback';
 
 export function Main() {
   return (
@@ -9,8 +10,8 @@ export function Main() {
       <main className="main">
 
         <Menu />
-        <Templates />
-        {/* <Feedback /> */}
+        {/* <Templates />
+        <Feedback /> */}
 
       </main>
     </>

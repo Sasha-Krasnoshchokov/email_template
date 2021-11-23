@@ -1,15 +1,12 @@
 import './App.scss';
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Email Template
-        </p>
-        
-      </header>
+    <div className="App" id="home_page">
+      <Header />
+      <Main />
     </div>
   );
 }

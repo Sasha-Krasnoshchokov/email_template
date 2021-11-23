@@ -1,0 +1,22 @@
+$font-family-roboto: 'Roboto', sans-serif;
+
+$font-size-12: 12px;
+$font-size-18: 18px;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semi-bold: 500;
+
+%roboto-light-12 {
+  font-family: $font-family-roboto;
+  font-size: $font-size-12;
+  font-weight: $font-weight-semi-bold;
+  line-height: 14px;
+}
+
+%roboto-light-18 {
+  font-family: $font-family-roboto;
+  font-size: $font-size-18;
+  font-weight: $font-weight-light;
+  line-height: 21px;
+}

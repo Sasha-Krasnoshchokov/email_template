@@ -1,0 +1,6 @@
+@import '../../styles/styles.scss';
+
+.main {
+  @extend %display-flex-jcsb;
+  padding: 0 67px 0 170px;
+}

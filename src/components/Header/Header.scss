@@ -1,0 +1,37 @@
+@import '../../styles/styles.scss';
+
+.header {
+  @extend %display-flex-aic;
+  padding: 0 0 0 27px;
+  height: 77px;
+  background-color: $bgc-secondary;
+
+  &__logo {
+    @extend %display-flex-aic;
+    justify-content: space-between;
+    width: 190px;
+
+    &-part1 {
+      width: 16px;
+      height: 23px;
+      @extend %bg-image;
+      background-image: url(../../images/icons/E.svg);
+    }
+
+    &-part2 {
+      width: 20px;
+      height: 23px;
+      @extend %bg-image;
+      background-image: url(../../images/icons/T.svg);
+    }
+  }
+
+  &__link {
+    @extend %display-flex-aic;
+    height: 38px;
+  }
+
+  &__title {
+    @extend %roboto-light-18;
+  }
+}

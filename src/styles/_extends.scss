@@ -1,0 +1,15 @@
+%display-flex-aic {
+  display: flex;
+  align-items: center;
+}
+
+%display-flex-jcsb {
+  display: flex;
+  justify-content: space-between;
+}
+
+%bg-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

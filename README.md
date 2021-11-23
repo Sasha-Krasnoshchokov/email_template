@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+- [DEMO](https://sasha-krasnoshchokov.github.io/email_template/)
+- [UI design](https://www.figma.com/file/HcQ8uMVeTyrDldblY5Axou/Email-Templater?node-id=1%3A2)
+
 ## Functional Requirements
 1.	UI Design, it’s pixel perfect, please try to match it as much as possible.
 2.	In template editor, user is expected to enter a text with placeholders (variables) like this: {name}. Placeholders start with “{“, followed by any number of english letters and end with “}”. Spaces or any other characters are not allowed, so “{ name,}” is not a valid placeholder.

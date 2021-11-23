@@ -1,14 +1,14 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './ComposeEmail.scss';
 
-const defaultTemplate = {
-  recipients: '',
-  subject: '',
-  body: '',
-};
+// const defaultTemplate = {
+//   recipients: '',
+//   subject: '',
+//   body: '',
+// };
 
 export function ComposeEmail() {
-  const [template, setTemplate] = useState(defaultTemplate);
+  // const [template, setTemplate] = useState(defaultTemplate);
 
   return (
     <>

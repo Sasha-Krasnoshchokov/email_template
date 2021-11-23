@@ -2,7 +2,7 @@ import classnames from 'classnames';
 
 import { Button } from './Buttons/Button.js';
 import { EmailTemplate } from './EmailTemplate/EmailTemplate.js';
-import { InputsTemplate } from './InputsTemplate/InputsTemplate.js';
+// import { InputsTemplate } from './InputsTemplate/InputsTemplate.js';
 import './Templates.scss';
 
 export function Templates() {

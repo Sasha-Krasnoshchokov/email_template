@@ -1,2 +1,0 @@
-(this.webpackJsonpemail_template=this.webpackJsonpemail_template||[]).push([[0],{11:function(e,t,c){"use strict";c.r(t);var n=c(1),a=c.n(n),i=c(3),r=c.n(i),s=(c(8),c(9),c(0));var l=function(){return Object(s.jsx)("div",{className:"App",children:Object(s.jsx)("header",{className:"App-header",children:Object(s.jsx)("p",{children:"Email Template"})})})};r.a.render(Object(s.jsx)(a.a.StrictMode,{children:Object(s.jsx)(l,{})}),document.getElementById("root"))},8:function(e,t,c){},9:function(e,t,c){}},[[11,1,2]]]);
-//# sourceMappingURL=main.6987b632.chunk.js.map

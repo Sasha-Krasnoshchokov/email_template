@@ -1,7 +1,39 @@
 @import '../../../styles/styles.scss';
 
 .feedback {
+  visibility: hidden;
+  @extend %display-flex-aic;
   width: 292px;
-  height: 93px;
-  border: 1px solid;
+  height: 38px;
+  margin-top: 47px;
+  border: 1px solid $feedback-border;
+  box-sizing: border-box;
+  background-color: $bgc-secondary;
+
+  &__status {
+    width: 9px;
+    height: 100%;
+    margin-right: 9px;
+
+    &--good {
+      background-color: $feedback-good;
+    }
+
+    &--bed {
+      background-color: $feedback-bed;
+    }
+  }
+
+  &__cross {
+    position: absolute;
+    right: 12px;
+    width: 6.85px;
+    height: 6.85px;
+    @extend %bg-image;
+    background-image: url(../../../images/cross.svg);
+  }
+
+  &--active {
+    visibility: visible;
+  }
 }

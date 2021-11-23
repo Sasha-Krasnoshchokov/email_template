@@ -52,12 +52,12 @@ export function EmailTemplate() {
             id="body"
           />
 
-          <button
+          {/* <button
             onClick={() => console.log(1)}
             className="composeEmail__button" type="button"
           >
             SET VARIABLES
-          </button>
+          </button> */}
         </form>
 
       </div>

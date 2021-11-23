@@ -1,0 +1,13 @@
+@import "../../../../styles/styles.scss";
+
+.button {
+  @extend %roboto-semi-light-12;
+  width: 121px;
+  height: 33px;
+  color: $bgc-secondary;
+  background-color: $dark-primary;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

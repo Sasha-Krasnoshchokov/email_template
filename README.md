@@ -1,70 +1,28 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Functional Requirements
+1.	UI Design, it’s pixel perfect, please try to match it as much as possible.
+2.	In template editor, user is expected to enter a text with placeholders (variables) like this: {name}. Placeholders start with “{“, followed by any number of english letters and end with “}”. Spaces or any other characters are not allowed, so “{ name,}” is not a valid placeholder.
+NOTE: placeholders are not static, users can add as many of them as they want. Don’t rely on just {subject} {date} that are present on figma designs, there may be 10 or 20 of those placeholders.
+3.	On the second step, the user should have a possibility to enter a value for each placeholder found in the template (which means that form should be dynamically generated).
+4.	On the third step, the user should be able to preview the generated email, where all placeholders are replaced with the values entered by the user on the second step. In order to send an email, send a POST request to this endpoint:  https://mock.at.leanylabs.com/email
+The payload should look like this:
+  {
+    "to": "hr@leanylabs.com",
+    "subject": "NY Party",
+    "body": "the actual body of the email"
+  }
+In case of success, the server will respond with 200 and will send the request body back in “echo” property.
+NOTE: server will return 500 or 200 status code randomly (50% chance each). It’s done intentionally, so that you can test that your app handles errors properly.
+5.	In case of a successful response from the server, show a success message. The message should be visible for 5 seconds, then disappear.
+6.	In case of an error response from the server, show an error message (also for 5 seconds).
+7.	BONUS: make the app work correctly if one of the values is the same as the placeholder name. For example we have the following template: “let’s swap {one} and {two}, so that we get {two} and {one}”, and we set the value for “{one}” = “{two}”, and value for “{two}” = “{one}”, the result should be:  “let’s swap {two} and {one}, so that we get {one} and {two}”.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technical Requirements
+1.	Please use React to build the UI part
+2.	You may use Redux or any other state management library
+3.	You may use CRA (create react app) or any other boilerplate to bootstrap a React application
+4.	You may use any other libraries if needed
+5.	It should be possible to easily start an app on another developer’s machine.
+6.	Please share your code via GitHub
+7.	Please deploy your code to Github pages.

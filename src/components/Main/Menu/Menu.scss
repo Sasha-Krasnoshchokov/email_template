@@ -15,7 +15,7 @@
     @extend %display-flex-aic;
 
     &-title {
-      @extend %roboto-light-12;
+      @extend %roboto-semi-bold-12;
       color: $menu-text-color;
     }
 
@@ -38,7 +38,7 @@
     background-color: $menu-counter-backgroung;
 
     &-text {
-      @extend %roboto-light-12;
+      @extend %roboto-semi-bold-12;
       color: $menu-counter-text;
     }
 

@@ -11,7 +11,7 @@ export function Header() {
             <div className="header__logo-part2" />
         </a>
         
-        <p className="header__title">Email Templater</p>
+        <h1 className="header__title">Email Templater</h1>
       </section>
 
       </header>

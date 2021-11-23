@@ -1,13 +1,15 @@
+import { ComposeEmail } from './ComposeEmail/ComposeEmail';
+
 import './Templates.scss';
 
 export function Templates() {
   return (
     <>
-      <main className="templates">
+      <div className="templates">
 
-        <p>Templates</p>
+        <ComposeEmail />
 
-      </main>
+      </div>
     </>
   );
 }

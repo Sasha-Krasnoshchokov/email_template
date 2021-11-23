@@ -1,17 +1,46 @@
 $font-family-roboto: 'Roboto', sans-serif;
 
 $font-size-12: 12px;
+$font-size-16: 16px;
 $font-size-18: 18px;
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-semi-bold: 500;
 
-%roboto-light-12 {
+%roboto-semi-light-12 {
+  font-family: $font-family-roboto;
+  font-size: $font-size-12;
+  font-weight: $font-weight-light;
+  line-height: 14px;
+}
+
+%roboto-regular-12 {
+  font-family: $font-family-roboto;
+  font-size: $font-size-12;
+  font-weight: $font-weight-regular;
+  line-height: 14px;
+}
+
+%roboto-semi-bold-12 {
   font-family: $font-family-roboto;
   font-size: $font-size-12;
   font-weight: $font-weight-semi-bold;
   line-height: 14px;
+}
+
+%roboto-regular-16 {
+  font-family: $font-family-roboto;
+  font-size: $font-size-16;
+  font-weight: $font-weight-regular;
+  line-height: 19px;
+}
+
+%roboto-semi-bold-16 {
+  font-family: $font-family-roboto;
+  font-size: $font-size-16;
+  font-weight: $font-weight-semi-bold;
+  line-height: 19px;
 }
 
 %roboto-light-18 {

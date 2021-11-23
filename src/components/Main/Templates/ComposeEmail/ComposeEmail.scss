@@ -1,0 +1,72 @@
+@import '../../../../styles/styles.scss';
+
+.composeEmail {
+  margin-top: 56px;
+  width: 100%;
+  height: 100%;
+
+  &__title {
+    @extend %roboto-semi-bold-16;
+    margin-bottom: 48px;
+  }
+
+  &__form {
+    align-items: start;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    @extend %roboto-semi-light-12;
+    color: $dark-primary;
+
+    &-recipients {
+      margin-bottom: 3px;
+    }
+    &-subject {
+      margin-bottom: 5px;
+    }
+    &-body {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__input {
+    @extend %roboto-regular-12;
+    box-sizing: border-box;
+    padding: 10px 8px;
+    width: 100%;
+    height: 34px;
+    color: $dark-primary;
+
+    &-recipients {
+      margin-bottom: 12px;
+    }
+    &-subject {
+      margin-bottom: 8px;
+    }
+
+    &-body {
+      @extend %roboto-regular-16;
+      height: 221px;
+      margin-bottom: 30px;
+      text-align: left;
+      background-color: $bgc-secondary;
+      box-sizing: border-box;
+      resize: none;
+    }
+  }
+
+  &__button {
+    @extend %roboto-semi-light-12;
+    width: 121px;
+    height: 33px;
+    color: $bgc-secondary;
+    background-color: $dark-primary;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -5,7 +5,6 @@ export function Templates() {
   return (
     <>
       <div className="templates">
-
       </div>
     </>
   );

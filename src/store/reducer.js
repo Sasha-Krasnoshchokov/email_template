@@ -7,7 +7,6 @@ import {
 } from './actions';
 
 const createCleanEmail = (text, placeholders) => {
-  let str = text;
   let allPlaceholders = !text ? [] : text.match(/{\w+}/g);
 
   if (placeholders.length > 2) {

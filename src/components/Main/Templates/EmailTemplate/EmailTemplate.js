@@ -22,7 +22,6 @@ export function EmailTemplate() {
     dispatch(actions.clearPlaceholders());
 
     const char = text.charAt(text.length-1);
-
     const isLetter = (char.toUpperCase() !== char.toLowerCase());
 
     !variable && dispatch(actions.fillEmailBody(text));

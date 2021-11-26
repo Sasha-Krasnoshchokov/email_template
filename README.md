@@ -3,6 +3,16 @@
 - [DEMO](https://sasha-krasnoshchokov.github.io/email_template/)
 - [UI design](https://www.figma.com/file/HcQ8uMVeTyrDldblY5Axou/Email-Templater?node-id=1%3A2)
 
+## About project
+- On screen you have three section:
+  1. Interactive menu that can help you switches between components of second section.
+  2. Section for creating and filling templates. 
+      - On first step you can create templates - {placeholders} for email letter.
+      Fields Recipients and Subject are non creation fields. They are only for fill information.
+      - On second step you must describes all {placeholders}.
+      - Then you can preview and send your email letter.
+  3. The third section will notify you about success or unsuccess     sending.
+
 ## Functional Requirements
 1.	UI Design, it’s pixel perfect, please try to match it as much as possible.
 2.	In template editor, user is expected to enter a text with placeholders (variables) like this: {name}. Placeholders start with “{“, followed by any number of english letters and end with “}”. Spaces or any other characters are not allowed, so “{ name,}” is not a valid placeholder.

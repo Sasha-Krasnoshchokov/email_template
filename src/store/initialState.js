@@ -23,13 +23,13 @@ export let state = {
     {
       id: 1,
       title: 'Recipients',
-      name: '{recipient}',
+      name: 'recipient',
       text: '',
     },
     {
       id: 2,
       title: 'Subject',
-      name: '{subject}',
+      name: 'subject',
       text: '',
     },
   ],

@@ -3,17 +3,22 @@ import classnames from 'classnames';
 import './Feedback.scss';
 
 export function Feedback({
+  isFeedback,
   isSentSuccess,
 }) {
+
+  setTimeout(() => {
+    isFeedback = false;
+  }, 5000);
+
   return (
     <>
-      <div
-        className={
-          classnames({
-            'feedback': true,
-            'feedback--active': !isSentSuccess,
-          })
-        }
+      <div className={
+        classnames({
+          'feedback': true,
+          'feedback--visible': isFeedback,
+        })
+      }
       >
 
         <div

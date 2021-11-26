@@ -1,6 +1,17 @@
 @import "../../../../styles/styles.scss";
 
 .inputsTemplate {
+  margin-top: 60px;
+
+  &--wrap {
+    margin-bottom: 21px;
+  }
+
+  &__title {
+		@extend %roboto-semi-bold-16;
+		margin-bottom: 42px;
+	}
+
   &__label {
     display: flex;
     flex-direction: column;
@@ -13,7 +24,7 @@
   &__input {
     @extend %roboto-regular-12;
     box-sizing: border-box;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     padding: 10px 8px;
     width: 100%;
     height: 34px;

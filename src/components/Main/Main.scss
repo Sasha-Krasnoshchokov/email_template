@@ -3,4 +3,8 @@
 .main {
   @extend %display-flex-jcsb;
   padding: 0 67px 0 170px;
+
+  @media screen and (max-width: 1250px) {
+    padding: 0 27px 0 60px;
+  }
 }

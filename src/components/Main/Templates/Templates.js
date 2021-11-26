@@ -1,27 +1,31 @@
-import classnames from 'classnames';
 
-import { Button } from './Buttons/Button.js';
 import { EmailTemplate } from './EmailTemplate/EmailTemplate.js';
-// import { InputsTemplate } from './InputsTemplate/InputsTemplate.js';
+import { InputsTemplate } from './InputsTemplate/InputsTemplate.js';
+
+import { useSelector } from 'react-redux';
+
 import './Templates.scss';
 
 export function Templates() {
+  const idActivePage = useSelector((state) => state.pageActive.idActivePage);
+
   return (
     <>
       <div className="templates">
-        <EmailTemplate />
+        {
+          idActivePage !== 2
+          &&
+          <EmailTemplate />
+        }
 
-        {/* <InputsTemplate placeholder={'Name'} /> */}
+        {
+          idActivePage === 2
+          &&
+          <InputsTemplate
+            idActivePage={idActivePage}
+          />
+        }
 
-        <div className={
-          classnames({
-            'templates__button': false,
-            'templates__buttons': true,
-          })
-        }>
-          <Button placeholder={'Name'} />
-          <Button placeholder={'Name'} />
-        </div>
       </div>
     </>
   );

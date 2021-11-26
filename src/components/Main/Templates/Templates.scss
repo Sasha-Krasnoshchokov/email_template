@@ -2,6 +2,10 @@
 
 .templates {
   width: 530px;
+  
+  @media screen and (max-width: 1000px) {
+    width: 350px;
+  }
 
   &__button {
     width: 100%;

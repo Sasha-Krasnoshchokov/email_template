@@ -10,6 +10,14 @@
   box-sizing: border-box;
   background-color: $bgc-secondary;
 
+  &--visible {
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 1250px) {
+    width: 192px;
+  }
+
   &__status {
     width: 9px;
     height: 100%;
@@ -31,9 +39,5 @@
     height: 6.85px;
     @extend %bg-image;
     background-image: url(../../../images/cross.svg);
-  }
-
-  &--active {
-    visibility: visible;
   }
 }

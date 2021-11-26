@@ -117,6 +117,7 @@ export function EmailTemplate() {
               ?
                 <textarea
                   onChange={(event) => inputtingEmailBody(event.target.value)}
+                  placeholder='{enter your email template}'
                   value={ idActivePage === 1 ? dirtyEmail : cleanEmail }
                   className="composeEmail__input composeEmail__input-body"
                   id="body"
@@ -124,8 +125,7 @@ export function EmailTemplate() {
               :
                 <>
                   <textarea
-                    placeholder='{enter your email template}'
-                    value={ idActivePage === 1 ? dirtyEmail : cleanEmail }
+                    defaultValue={ idActivePage === 1 ? dirtyEmail : cleanEmail }
                     className="composeEmail__input composeEmail__input-body"
                     id="body"
                   />

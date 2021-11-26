@@ -8,6 +8,8 @@ export const FILL_EMAIL_BODY = 'FILL_BODY_EMAIL';
 export const FILL_CLEAN_EMAIL_TEXT = 'FILL_CLEAN_EMAIL_TEXT';
 export const CREATE_EMAIL = 'CREATE_EMAIL';
 export const CLEAR = 'CLEAR';
+export const SEND_EMAIL = 'SEND_EMAIL';
+export const SENDING_STATUS = 'SENDING_STATUS';
 
 export const actions = {
   clickOnMenu: (value) => ({ type: CLICK_ON_MENU, value }),
@@ -20,4 +22,6 @@ export const actions = {
   fillCleanEmailText: () => ({ type: FILL_CLEAN_EMAIL_TEXT }),
   createEmail: () => ({ type: CREATE_EMAIL }),
   clear: () => ({ type: CLEAR }),
+  sendEmail: (value) => ({ type: SEND_EMAIL, value }),
+  sendingStatus: (value) => ({ type: SENDING_STATUS, value }),
 };

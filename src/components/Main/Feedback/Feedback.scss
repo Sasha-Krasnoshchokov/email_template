@@ -32,6 +32,11 @@
     }
   }
 
+  &__text {
+    @extend %roboto-regular-12;
+    color: $dark-primary;
+  }
+
   &__cross {
     position: absolute;
     right: 12px;
@@ -39,5 +44,10 @@
     height: 6.85px;
     @extend %bg-image;
     background-image: url(../../../images/cross.svg);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.5);
+    }
   }
 }

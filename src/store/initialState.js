@@ -33,4 +33,8 @@ export let state = {
       text: '',
     },
   ],
+  aboutSending: {
+    isSend: false,
+    status: false,
+  },
 };

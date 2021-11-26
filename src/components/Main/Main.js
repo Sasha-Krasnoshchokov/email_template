@@ -1,14 +1,26 @@
-import { useState } from 'react';
 
 import './Main.scss';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { actions } from '../../store/actions';
 
 import { Menu } from './Menu/Menu';
 import { Templates } from './Templates/Templates';
 import { Feedback } from './Feedback/Feedback';
+import { useEffect } from 'react';
 
 export function Main() {
-  const isSentSuccess = false;
-  const [isFeedback, setIsFeedback] = useState(true);
+  const dispatch = useDispatch();
+  const isSend = useSelector(state => state.aboutSending.isSend);
+  const status = useSelector(state => state.aboutSending.status);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log('This will run after 5 second!')
+      dispatch(actions.sendEmail(false));
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [isSend]);
 
   return (
     <>
@@ -19,8 +31,8 @@ export function Main() {
         <Templates />
 
         <Feedback
-          isFeedback={isFeedback}
-          isSentSuccess={isSentSuccess}
+          isSend={isSend}
+          status={status}
         />
 
       </main>

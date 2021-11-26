@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import classnames from 'classnames';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,6 +14,9 @@ export function Button({
 }) {
   const dispatch = useDispatch();
   const dirtyText = useSelector(state => state.bodyEmail.dirtyText);
+
+  const subject = useSelector(state => state.placeholders[1].text);
+  const emailToSend = useSelector(state => state.bodyEmail.cleanText);
 
   const userPressed = (name) => {
     name === 'BACK' && dispatch(actions.back());
@@ -40,7 +45,31 @@ export function Button({
     }
 
     if (name === 'SEND') {
-      
+
+      axios.post('https://mock.at.leanylabs.com/email', {
+        'to': "hr@leanylabs.com",
+        'subject': subject,
+        'body': emailToSend,
+      })
+      .then(function (response) {
+        console.log(response);
+        // dispatch(actions.sendingStatus(true));
+        setTimeout(() => {
+          console.log('This will run after 5 second!')
+          dispatch(actions.sendingStatus(true));
+          dispatch(actions.sendEmail(true));
+        }, 0);
+        // dispatch(actions.sendEmail(true));
+      })
+      .catch(function (error) {
+        console.log(error);
+        console.log('not send');
+        setTimeout(() => {
+          console.log('This will run after 5 second!')
+          dispatch(actions.sendEmail(true));
+        }, 0);
+        // dispatch(actions.sendEmail(true));
+      });
     }
   };
 

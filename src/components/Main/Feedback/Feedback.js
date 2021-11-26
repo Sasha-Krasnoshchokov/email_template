@@ -1,22 +1,24 @@
 import classnames from 'classnames';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { actions } from '../../../store/actions';
+
 import './Feedback.scss';
 
 export function Feedback({
-  isFeedback,
-  isSentSuccess,
+  isSend,
+  status,
 }) {
-
-  setTimeout(() => {
-    isFeedback = false;
-  }, 5000);
+  const dispatch = useDispatch();
+  console.log('feedback: ', status)
+  console.log('feedbackState: ', useSelector(state => state.aboutSending.status))
 
   return (
     <>
       <div className={
         classnames({
           'feedback': true,
-          'feedback--visible': isFeedback,
+          'feedback--visible': isSend,
         })
       }
       >
@@ -25,19 +27,22 @@ export function Feedback({
           className={
             classnames({
               'feedback__status': true,
-              'feedback__status--good': isSentSuccess,
-              'feedback__status--bed': !isSentSuccess,
+              'feedback__status--good': status,
+              'feedback__status--bed': !status,
             })
           }
         />
         <p className="feedback__text">
           {
-            isSentSuccess
+            status
               ? 'Email sent successfully!'
               : 'Failed to send email!'
           }
         </p>
-        <div className="feedback__cross" />
+        <div
+          onClick={() => dispatch(actions.sendEmail(false))}
+          className="feedback__cross"
+        />
 
       </div>
     </>

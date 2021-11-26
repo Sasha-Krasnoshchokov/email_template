@@ -3,19 +3,20 @@ import {
   FILL_EMAIL_BODY, FILL_CLEAN_EMAIL_TEXT, CREATE_EMAIL,
   ADD_PLACEHOLDER, CLEAR_PLACEHOLDERS, FILL_PLACEHOLDER,
   CLICK_ON_MENU, BACK, NEXT,
-  CLEAR,
+  CLEAR, SEND_EMAIL, SENDING_STATUS,
 } from './actions';
 
-const createCleanEmail = (emailText, placeholders) => {
-  let text = emailText;
-  let allPlaceholders = emailText.match(/{\w+}/g);
-  allPlaceholders.forEach(item => {
-    if (placeholders.length > 2) {
+const createCleanEmail = (text, placeholders) => {
+  let str = text;
+  let allPlaceholders = !text ? [] : text.match(/{\w+}/g);
+
+  if (placeholders.length > 2) {
+    allPlaceholders.forEach(item => {
       text = text.replace(
         item, placeholders.find(placeholder => placeholder.name === item).text
       )
-    }
-  });
+    });
+  } 
   return text;
 };
 
@@ -109,6 +110,24 @@ export const reducer = (state = {}, action) => {
 
     case CLEAR:
       return initialState;
+
+    case SEND_EMAIL:
+      return {
+        ...state,
+        aboutSending: {
+          ...state.aboutSending,
+          isSend: action.value,
+        },
+      };
+
+    case SENDING_STATUS:
+      return {
+        ...state,
+        aboutSending: {
+          ...state.aboutSending,
+          status: false,
+        },
+      };
 
     default:
       return state;

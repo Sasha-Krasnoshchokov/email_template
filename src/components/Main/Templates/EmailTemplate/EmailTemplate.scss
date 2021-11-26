@@ -49,6 +49,10 @@
     background: $bgc-secondary;
     border: 1px solid $input-border;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		&-recipients {
 			margin-bottom: 12px;
 		}
@@ -67,5 +71,10 @@
 			background: $bgc-secondary;
 			border: 1px solid $input-border;
 		}
+	}
+
+	&__warning {
+		@extend %roboto-semi-light-10;
+		top: -35px;
 	}
 }

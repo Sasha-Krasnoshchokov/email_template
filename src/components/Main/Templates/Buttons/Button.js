@@ -15,6 +15,7 @@ export function Button({
   const dispatch = useDispatch();
   const dirtyText = useSelector(state => state.bodyEmail.dirtyText);
 
+  const url = useSelector(state => state.placeholders[0].text);
   const subject = useSelector(state => state.placeholders[1].text);
   const emailToSend = useSelector(state => state.bodyEmail.cleanText);
 
@@ -29,7 +30,8 @@ export function Button({
 
     if (name === 'SET VARIABLES' && isChangeEmailBody) {
       let placeholders = [];
-      dirtyText
+      if (dirtyText.indexOf('{') >= 0 && dirtyText.indexOf('}') >= 0) {
+        dirtyText
         .match(/{\w+}/g)
         .forEach(item => {
           if (placeholders.indexOf(item) < 0) {
@@ -40,36 +42,32 @@ export function Button({
         placeholders.forEach(item => {
           item !== '{subject}' && dispatch(actions.addPlaceholder(item))
         });
+      }
 
       setIsChangeEmailBody(false);
     }
 
     if (name === 'SEND') {
-
-      axios.post('https://mock.at.leanylabs.com/email', {
-        'to': "hr@leanylabs.com",
-        'subject': subject,
-        'body': emailToSend,
-      })
-      .then(function (response) {
-        console.log(response);
-        // dispatch(actions.sendingStatus(true));
-        setTimeout(() => {
-          console.log('This will run after 5 second!')
-          dispatch(actions.sendingStatus(true));
+      if (url && subject) {
+        axios.post('https://mock.at.leanylabs.com/email', {
+          'to': "hr@leanylabs.com",
+          'subject': subject,
+          'body': emailToSend,
+        })
+        .then(function (response) {
+            dispatch(actions.sendingStatus(true));
+            if (response.status >= 200 && response.status <= 300) {
+            dispatch(actions.sendEmail(true));
+            }
+        })
+        .catch(function (error) { 
+          console.log(error);
+          dispatch(actions.sendingStatus(false));
           dispatch(actions.sendEmail(true));
-        }, 0);
-        // dispatch(actions.sendEmail(true));
-      })
-      .catch(function (error) {
-        console.log(error);
-        console.log('not send');
-        setTimeout(() => {
-          console.log('This will run after 5 second!')
-          dispatch(actions.sendEmail(true));
-        }, 0);
-        // dispatch(actions.sendEmail(true));
-      });
+        });
+      } else {
+        window.alert('Please, fill {Recipient} and {Subject}!')
+      }
     }
   };
 

@@ -16,7 +16,6 @@ export function Main() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log('This will run after 5 second!')
       dispatch(actions.sendEmail(false));
     }, 5000);
     return () => clearTimeout(timer);

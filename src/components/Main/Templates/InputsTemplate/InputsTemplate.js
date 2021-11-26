@@ -37,6 +37,7 @@ export function InputsTemplate({
                 <input
                   onChange={(event) => describeVariable(event)}
                   value={item.text}
+                  placeholder={item.name}
                   className="inputsTemplate__input"
                   data={item.name}
                   id={item.id}

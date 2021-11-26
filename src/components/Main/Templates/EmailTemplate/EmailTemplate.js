@@ -23,13 +23,7 @@ export function EmailTemplate() {
 
     const char = text.charAt(text.length-1);
 
-    const isLetter = (
-      (char.charCodeAt(0) >= 65
-        && char.charCodeAt(0) <= 90)
-      ||
-      (char.charCodeAt(0) >= 97
-        && char.charCodeAt(0) <= 122)
-    );
+    const isLetter = (char.toUpperCase() !== char.toLowerCase());
 
     !variable && dispatch(actions.fillEmailBody(text));
 
@@ -42,7 +36,8 @@ export function EmailTemplate() {
       setVariable('');
     }
 
-    if (variable && isLetter) {
+    if ((variable && isLetter) || char === '{') {
+      setIsChangeEmailBody(false);
       dispatch(actions.fillEmailBody(text));
       setVariable(variable + char);
     }
@@ -91,6 +86,7 @@ export function EmailTemplate() {
           <input
             onChange={(event) => describeVariable(event)}
             value={useSelector((state) => state.placeholders[0].text)}
+            placeholder={useSelector((state) => state.placeholders[0].name)}
             className="composeEmail__input composeEmail__input-recipients"
             id={useSelector((state) => state.placeholders[0].id)}
           />
@@ -105,6 +101,7 @@ export function EmailTemplate() {
           <input
             onChange={(event) => describeVariable(event)}
             value={useSelector((state) => state.placeholders[1].text)}
+            placeholder={useSelector((state) => state.placeholders[1].name)}
             className="composeEmail__input composeEmail__input-subject"
             id={useSelector((state) => state.placeholders[1].id)}
           />
@@ -116,12 +113,29 @@ export function EmailTemplate() {
             {useSelector((state) => state.bodyEmail.name)}
           </label>
 
-          <textarea
-            onChange={(event) => inputtingEmailBody(event.target.value)}
-            value={ idActivePage === 1 ? dirtyEmail : cleanEmail }
-            className="composeEmail__input composeEmail__input-body"
-            id="body"
-          />
+          {
+            idActivePage === 1
+              ?
+                <textarea
+                  onChange={(event) => inputtingEmailBody(event.target.value)}
+                  value={ idActivePage === 1 ? dirtyEmail : cleanEmail }
+                  className="composeEmail__input composeEmail__input-body"
+                  id="body"
+                />
+              :
+                <>
+                  <textarea
+                    placeholder='{enter your email template}'
+                    value={ idActivePage === 1 ? dirtyEmail : cleanEmail }
+                    className="composeEmail__input composeEmail__input-body"
+                    id="body"
+                  />
+                  <span className="composeEmail__warning">
+                    This lield you can correct only on *Compose Email Template* page!
+                  </span>
+                </>
+          }
+          
 
           <div role="button"
             className={

@@ -13,6 +13,7 @@
 
   &__item {
     @extend %display-flex-aic;
+    transition: transform 500ms;
 
     &-title {
       @extend %roboto-semi-bold-12;
@@ -25,6 +26,7 @@
 
     &:hover {
       cursor: pointer;
+      transform: translateY(-5px);
     }
   }
 

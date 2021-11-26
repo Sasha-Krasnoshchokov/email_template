@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { actions } from '../../../store/actions';
 
 import './Feedback.scss';
@@ -10,8 +10,6 @@ export function Feedback({
   status,
 }) {
   const dispatch = useDispatch();
-  console.log('feedback: ', status)
-  console.log('feedbackState: ', useSelector(state => state.aboutSending.status))
 
   return (
     <>

@@ -125,7 +125,7 @@ export const reducer = (state = {}, action) => {
         ...state,
         aboutSending: {
           ...state.aboutSending,
-          status: false,
+          status: action.value,
         },
       };
 

@@ -7,6 +7,8 @@
   color: $bgc-secondary;
   background-color: $dark-primary;
 
+  transition: transform 500ms;
+
   &--gray {
     color: $dark-primary;
     background-color: $menu-counter-backgroung;
@@ -14,6 +16,7 @@
 
   &:hover {
     cursor: pointer;
+    transform: translateY(-5px);
   }
 
   &__wrap {

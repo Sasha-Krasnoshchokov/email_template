@@ -23,13 +23,24 @@ export function Button({
     }
 
     if (name === 'SET VARIABLES' && isChangeEmailBody) {
+      let placeholders = [];
       dirtyText
         .match(/{\w+}/g)
         .forEach(item => {
+          if (placeholders.indexOf(item) < 0) {
+            placeholders.push(item);
+          }
+        });
+
+        placeholders.forEach(item => {
           item !== '{subject}' && dispatch(actions.addPlaceholder(item))
         });
 
       setIsChangeEmailBody(false);
+    }
+
+    if (name === 'SEND') {
+      
     }
   };
 

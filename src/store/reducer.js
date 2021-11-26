@@ -6,12 +6,16 @@ import {
   CLEAR,
 } from './actions';
 
-//hi {name} go to {subject} on {date}. bye
 const createCleanEmail = (emailText, placeholders) => {
   let text = emailText;
-  placeholders.forEach(item => (
-    text = text.replace(item.name, item.text)
-  ));
+  let allPlaceholders = emailText.match(/{\w+}/g);
+  allPlaceholders.forEach(item => {
+    if (placeholders.length > 2) {
+      text = text.replace(
+        item, placeholders.find(placeholder => placeholder.name === item).text
+      )
+    }
+  });
   return text;
 };
 

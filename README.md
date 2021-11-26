@@ -5,7 +5,7 @@
 
 ## About project
 - On screen you have three section:
-  1. Interactive menu that can help you switches between components of second section.
+  1. Interactive menu that can help you switches between components of second section. Also you can switching between section pushing on the button under the form.
   2. Section for creating and filling templates. 
       - On first step you can create templates - {placeholders} for email letter.
       Fields Recipients and Subject are non creation fields. They are only for fill information.
